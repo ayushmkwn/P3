@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Details{% endblock title %}
+{% block body %}
+<div class="container">
+    <center>
+        <h1>Student Details</h1>
+    </center>
+    <hr>
+    <h4><b>First Name : </b>{{object.First_Name}}</h4>
+    <h4><b>Middle Name : </b>{{object.Middle_Name}}</h4>
+    <h4><b>Last Name : </b>{{object.Last_name}}</h4>
+    <h4><b>Age : </b>{{object.Age}}</h4>
+    <h4><b>Gender : </b>{{object.Gender}}</h4>
+    <h4><b>Address : </b>{{object.Address}}</h4>
+    <h4><b>Email : </b>{{object.Email}}</h4>
+    <h4><b>Mobile : </b>{{object.Mobile}}</h4>
+    <h4><b>Alternate Email : </b>{{object.Alternate_Email}}</h4>
+    <h4><b>Alternate Mobile Number : </b>{{object.Alternate_Mobile}}</h4>
+    <h4><b>Father Name : </b>{{object.Father_Name}}</h4>
+    <h4><b>Mother Name : </b>{{object.Mother_Name}}</h4>
+    <h4><b>Institute Name : </b>{{object.Institute_Name}}</h4>
+    <h4><b>Branch Name : </b>{{object.Branch_Name}}</h4>
+</div>
+{% endblock body %}

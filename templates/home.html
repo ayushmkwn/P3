@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Home - MIS{% endblock title %}
+{% block homeActive %}active{% endblock homeActive %}
+{% block body %}
+<div class="container">
+    <br>
+    <table class="table table-striped">
+        <hr>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Mobile No</th>
+                <th>Institute Name</th>
+                <th>Branch Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in object_list %}
+            <tr>
+                <td>{{student.First_Name}}</td>
+                <td>{{student.Middle_Name}}</td>
+                <td>{{student.Last_Name}}</td>
+                <td>{{student.Age}}</td>
+                <td>{{student.Gender}}</td>
+                <td>{{student.Address}}</td>
+                <td>{{student.Email}}</td>
+                <td>{{student.Mobile}}</td>
+                <td>{{student.Institute_Name}}</td>
+                <td>{{student.Branch_Name}}</td>
+                <td>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'details_page' student.id %}"><button class="btn btn-success">View</button></a>
+                    <a href="{% url 'update_page' student.id %}"><button class="btn btn-warning">Upadate</button></a>
+                    <a href="{% url 'delete_page' student.id %}"><button class="btn btn-danger">Delete</button></a>
+                    {% else %}
+                    <div class="text-danger">Need to signin</div>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}
